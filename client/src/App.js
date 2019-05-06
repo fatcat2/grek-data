@@ -1,23 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu'; 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import { spacing } from '@material-ui/system';
 
-import MaterialTable from 'material-table';
 import ReactTable from "react-table";
 
 import red from '@material-ui/core/colors/red';

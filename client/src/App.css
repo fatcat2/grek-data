@@ -34,3 +34,8 @@
 body{
   overflow-x: hidden;
 }
+
+.ReactTable{
+  
+    border-radius: 10px;
+}

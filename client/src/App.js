@@ -21,7 +21,7 @@ const columns = [
 	{ accessor: 'name', Header: 'Name', resizable:true },
 	{ accessor: 'semester_gpa', Header: 'Semester GPA' },
 	{ accessor: 'cum_gpa', Header: 'Cumulative GPA' },
-	{ accessor: 'rank', Header: 'Rank' },
+	// { accessor: 'rank', Header: 'Rank' },
 	{ accessor: 'nm_gpa', Header: 'New Member GPA' },
 	{ accessor: 'new_mem', Header: 'New Members' },
 	{ accessor: 'total_mem', Header: 'Total Members' },

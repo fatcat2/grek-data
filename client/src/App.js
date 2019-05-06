@@ -64,6 +64,14 @@ function App() {
 					justify="center"
 				>
 					<Grid item lg={10} md={4} s={6} xs={12} my={4} >
+						<Typography variant="h4">
+							pu fscl 2019 fall report
+						</Typography>
+						<Typography variant="p">
+							below you will find data reported by the 2019 purdue fscl community to purdue frat, sorority and cooperative life. we have also added our own ranking (on the way). enjoy the data as you will
+						</Typography>
+					</Grid>
+					<Grid item lg={10} md={4} s={6} xs={12} my={4} >
 								<ReactTable
 									data={data}
 									columns={columns}

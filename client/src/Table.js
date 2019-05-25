@@ -16,7 +16,14 @@ const cols19 = [
 	{ accessor: 'new_mem', Header: 'New Members' },
 	{ accessor: 'total_mem', Header: 'Total Members' },
 	{ accessor: 'service_hrs', Header: 'Service Hours' },
-	{ accessor: 'phil', Header: 'Philantropy Money' },
+	{ accessor: 'phil', Header: 'Philantropy Money',
+	sortMethod: (a, b) => {
+		if(isNaN(a) || isNaN(b)){
+			return isNaN(a) ? -1 : 1;
+		}
+        return a > b ? 1 : -1;
+      }
+    },
 	{ accessor: 'alc', Header: 'Events w/ Alcohol' },
 	{ accessor: 'reporting', Header: 'Reporting' },
 	{ accessor: 'attendance', Header: 'Attendance' },

@@ -7,40 +7,143 @@ import Typography from '@material-ui/core/Typography';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import Input from '@material-ui/core/Input';
 
+
+function toCurrency(numberString) {
+	if(isNaN(numberString)){
+		return numberString;
+	}
+    let number = parseFloat(numberString);
+    return "$" + number.toLocaleString('USD');
+}
+
+
 const cols19 = [
-	{ accessor: 'name', Header: 'Name', resizable:true },
-	{ accessor: 'semester_gpa', Header: 'Semester GPA' },
-	{ accessor: 'cum_gpa', Header: 'Cumulative GPA' },
-	// { accessor: 'rank', Header: 'Rank' },
-	{ accessor: 'nm_gpa', Header: 'New Member GPA' },
-	{ accessor: 'new_mem', Header: 'New Members' },
-	{ accessor: 'total_mem', Header: 'Total Members' },
-	{ accessor: 'service_hrs', Header: 'Service Hours' },
-	{ accessor: 'phil', Header: 'Philantropy Money',
-	sortMethod: (a, b) => {
-		if(isNaN(a) || isNaN(b)){
-			return isNaN(a) ? -1 : 1;
-		}
-        return a > b ? 1 : -1;
-      }
+	{
+		accessor: 'name',
+		Header: 'Name',
+		resizable:true
+	},
+	{
+		accessor: 'semester_gpa',
+		Header: 'Semester GPA'
+	},
+	{
+		accessor: 'cum_gpa',
+		Header: 'Cumulative GPA'
+	},
+	{
+		accessor: 'nm_gpa',
+		Header: 'New Member GPA',
+		sortMethod: (a, b) => {
+			if(isNaN(a) || isNaN(b)){
+				return isNaN(a) ? -1 : 1;
+			}
+	        return a > b ? 1 : -1;
+    	}
     },
-	{ accessor: 'alc', Header: 'Events w/ Alcohol' },
-	{ accessor: 'reporting', Header: 'Reporting' },
-	{ accessor: 'attendance', Header: 'Attendance' },
-	{ accessor: 'conduct', Header: 'Conduct Level' }
+	{
+		accessor: 'new_mem',
+		Header: 'New Members'
+	},
+	{ 
+		accessor: 'total_mem',
+		Header: 'Total Members'
+	},
+	{ 
+		accessor: 'service_hrs',
+		Header: 'Service Hours',
+		sortMethod: (a, b) => {
+			if(isNaN(a) || isNaN(b)){
+				return isNaN(a) ? -1 : 1;
+			}
+	        return a > b ? 1 : -1;
+	    } 
+	},
+	{ 
+		accessor: 'phil', 
+		Header: 'Philantropy Money',
+		sortMethod: (a, b) => {
+			if(isNaN(a) || isNaN(b)){
+				return isNaN(a) ? -1 : 1;
+			}
+	        return a > b ? 1 : -1;
+	    },
+     	Cell: props => <div> {toCurrency(props.value)} </div>
+    },
+	{ 
+		accessor: 'alc', 
+		Header: 'Events w/ Alcohol' 
+	},
+	{ 
+		accessor: 'reporting', 
+		Header: 'Reporting' 
+	},
+	{ 
+		accessor: 'attendance', 
+		Header: 'Attendance' 
+	},
+	{ 
+		accessor: 'conduct', 
+		Header: 'Conduct Level' 
+	}
 ];
 
+
 const columns = [
-	{ accessor: 'name', Header: 'Name', resizable:true },
-	{ accessor: 'semester_gpa', Header: 'Semester GPA' },
-	{ accessor: 'cum_gpa', Header: 'Cumulative GPA' },
-	// { accessor: 'rank', Header: 'Rank' },
-	{ accessor: 'nm_gpa', Header: 'New Member GPA' },
-	{ accessor: 'new_mem', Header: 'New Members' },
-	{ accessor: 'total_mem', Header: 'Total Members' },
-	{ accessor: 'service_hrs', Header: 'Service Hours' },
-	{ accessor: 'phil', Header: 'Philantropy Money' }
+	{
+		accessor: 'name',
+		Header: 'Name',
+		resizable:true
+	},
+	{
+		accessor: 'semester_gpa',
+		Header: 'Semester GPA'
+	},
+	{
+		accessor: 'cum_gpa',
+		Header: 'Cumulative GPA'
+	},
+	{
+		accessor: 'nm_gpa',
+		Header: 'New Member GPA',
+		sortMethod: (a, b) => {
+			if(isNaN(a) || isNaN(b)){
+				return isNaN(a) ? -1 : 1;
+			}
+	        return a > b ? 1 : -1;
+    	}
+    },
+	{
+		accessor: 'new_mem',
+		Header: 'New Members'
+	},
+	{ 
+		accessor: 'total_mem',
+		Header: 'Total Members'
+	},
+	{ 
+		accessor: 'service_hrs',
+		Header: 'Service Hours',
+		sortMethod: (a, b) => {
+			if(isNaN(a) || isNaN(b)){
+				return isNaN(a) ? -1 : 1;
+			}
+	        return a > b ? 1 : -1;
+	    } 
+	},
+	{ 
+		accessor: 'phil', 
+		Header: 'Philantropy Money',
+		sortMethod: (a, b) => {
+			if(isNaN(a) || isNaN(b)){
+				return isNaN(a) ? -1 : 1;
+			}
+	        return a > b ? 1 : -1;
+	    },
+     	Cell: props => <div> {toCurrency(props.value)} </div>
+    }
 ];
+
 
 class Table extends React.Component{
 
@@ -49,12 +152,12 @@ class Table extends React.Component{
 	};
 
 	state = {
-		id: "f19"
+		id: "f18"
 	}
 
 	render(){
-		if(this.state.id === "f19"){
-			let fall19 = require("./fall19.json");
+		if(this.state.id === "f18"){
+			let fall19 = require("./fall18.json");
 			return (
 			<div style={{ padding: 50 }}>
 					<Grid
@@ -75,7 +178,7 @@ class Table extends React.Component{
 							onChange={this.handleChange("id")}
 							input={<Input name="age" id="age-native-helper" />}
 							>
-							<option value={"f19"}>Fall 2018</option>
+							<option value={"f18"}>Fall 2018</option>
 							<option value={"s18"}>Spring 2018</option>
 							</NativeSelect>
 						</Grid>
@@ -113,7 +216,7 @@ class Table extends React.Component{
 							onChange={this.handleChange("id")}
 							input={<Input name="age" id="age-native-helper" />}
 							>
-							<option value={"f19"}>Fall 2018</option>
+							<option value={"f18"}>Fall 2018</option>
 							<option value={"s18"}>Spring 2018</option>
 							</NativeSelect>
 						</Grid>

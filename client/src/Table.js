@@ -173,6 +173,7 @@ class Table extends React.Component{
 							<Typography variant="p">
 								below you will find data reported by the purdue fscl community to purdue frat, sorority and cooperative life. we have also added our own ranking (on the way). enjoy the data as you will
 							</Typography>
+							<br />
 							<NativeSelect
 							value={this.state.id}
 							onChange={this.handleChange("id")}
@@ -210,7 +211,7 @@ class Table extends React.Component{
 							<Typography variant="p">
 								below you will find data reported by the purdue fscl community to purdue frat, sorority and cooperative life. we have also added our own ranking (on the way). enjoy the data as you will
 							</Typography>
-							
+							<br />
 							<NativeSelect
 							value={this.state.id}
 							onChange={this.handleChange("id")}
